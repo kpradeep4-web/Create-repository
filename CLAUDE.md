@@ -73,6 +73,12 @@ leaver). Open: SBI USD account no., exit clearance, preparer, confirm SVC/tips a
   5 PH-worked months for 1013 need Yes/No; Sep-25 and Oct-26 attendance missing; Jan–Apr 2025 show no off days.
   4025 joining date 28-Dec-25 added to STAFF MASTER. Reviewed the 4025 F&F model file.
 
+- 05-Oct-26 (later): Sep-25 loaded into ATT DATA from "02.ATTENDANCE REPORT (SVC) SEPTEMBER 2025" (Hotel Operations sheet,
+  82 staff; Cruise / Safira sheets not loaded – not in the hotel tracker): P = salary-eligible days, Total = 30 (joiner 7011 and
+  F&F-settled 2027, 2032, 7007: total = eligible), NP = 30 − eligible (2013: 1, 2069: 18, 4005: 13); OFF / AL not in the report.
+  Built in simple.py (reads sep25.xlsx). Tracker v10. Side effect: day-off earned rises for Sep-25 (no OFF recorded) – 1013 day
+  off 7.57 → 11.86 in the tracker tab; FC decision pending on how to treat months without off-day detail.
+
 ## Open items
 - User to review F&F v9 (single tab).
 - Decide the leave-pay / no-pay daily base for staff with MWA: basic only (tracker) or basic + MWA (F&F model, Sep payroll NP).
