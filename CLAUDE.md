@@ -46,6 +46,12 @@ D = AL, new U = day off, new V = PH), earned, taken, F&F adjustments, pending da
 service-charge block (SVC and tips: previous month full + last-day month pro-rata, rows 20–23): column M = SVC amount typed manually (overrides per-head × days), N = already paid Yes/No, O = due in F&F. Draft v7.
 Rule from FC: if an HR opening balance is entered, F&F = opening balance + 2026 earned – 2026 taken; else count since joining.
 
+F&F STATEMENT tab (05-Oct-26): printable A4 statement in the same layout as the per-employee F&F model, driven by
+LEAVE STATEMENT D6/D7. Earnings: final-period salary (last day – "salary paid up to" – no-pay after cut-off) on basic +
+fixed allowances, PH not paid, AL, day off/PDO, R&R/other, notice in lieu, SVC, tips, arrears; deductions: MRPS 7% (Maldivian,
+on basic), EWT and recoveries (typed); bank, clearance, signatories. Inputs in yellow panel I:L (not printed); helper N51 =
+salary days. Tested: 4025 → MVR 9,000 (matches F&F file); 1013 → USD 868.57 before SVC/tips. Draft v8.
+
 ## Per-employee F&F model – `ECOBOO_FF_SETTLEMENT-<EMP#>-<NAME>-<MON-YY>.xlsx`
 Tabs README, SETUP (Act parameters, MRPS 7%+7% Maldivians, MIRA EWT slabs, notice table, QB accounts, rate 15.42),
 INPUT (yellow), CALC, F&F STATEMENT (A4), CHECKS (PASS/INFO/ALERT/PENDING/FAIL), QB JV, REGISTER.
