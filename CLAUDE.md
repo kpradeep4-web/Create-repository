@@ -43,7 +43,7 @@ LEAVE STATEMENT tab (05-Oct-26): one employee (D6 Emp#, D7 last day). Month-by-m
 HR opening balance exists): attendance, AL earned (completed months)/taken/running balance, off earned (1 in 7)/OFF+PDO taken/
 running balance, PH worked with Yes/No "paid in payroll" per month → PH pending. Summary: opening balance 31-Dec-25 (OPENING BAL
 D = AL, new U = day off, new V = PH), earned, taken, F&F adjustments, pending days and value; agreement check with F&F part A;
-service-charge block (previous month full + last-day month pro-rata + tips): column M = SVC amount typed manually (overrides per-head × days), N = already paid Yes/No, O = due in F&F. Draft v6.
+service-charge block (SVC and tips: previous month full + last-day month pro-rata, rows 20–23): column M = SVC amount typed manually (overrides per-head × days), N = already paid Yes/No, O = due in F&F. Draft v7.
 Rule from FC: if an HR opening balance is entered, F&F = opening balance + 2026 earned – 2026 taken; else count since joining.
 
 ## Per-employee F&F model – `ECOBOO_FF_SETTLEMENT-<EMP#>-<NAME>-<MON-YY>.xlsx`
