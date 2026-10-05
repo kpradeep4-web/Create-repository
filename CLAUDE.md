@@ -29,11 +29,19 @@ F&F SETTLEMENT tab (added 05-Oct-26):
 - Part A (leavers, rows 8–27): HR enters Emp#, separation type, last working day, AL not yet in ATT DATA, off-day adjustment,
   PH days in lieu, other days, F&F paid date. Pays AL balance + R&R + pending weekly off/PDO + PH in lieu + other, × basic ÷ 30.
   Due date = last day + 7 (Employment Act). Negative AL = recover. Column AC = SVC note (previous month full + leaving month
-  pro-rata, amounts from the SVC sheet).
+  pro-rata, amounts from the SVC sheet). Column AD = monthly leave-pay base if not basic (e.g. basic + MWA); blank = basic.
+  Hidden column AE = as-at date (last day, else SETUP period end) so a row fills in as soon as an Emp# is typed.
 - Notes block: what is payable on exit under the Maldives Employment Act (AL, weekly off, PH, R&R, sick/EL not paid, SVC, timing).
 - Part B (all staff): pending AL + R&R + day off and value (leave liability) per currency.
 - Weekly off earned = (total days – AL – SL – EL – PL – NP) ÷ 7 from 01-Jan-26, less OFF + PDO taken.
 - FC DASHBOARD control 19 counts F&F REDs; COMPLIANCE REVIEW rows 17 and 23 link to this tab.
+
+## Per-employee F&F model – `ECOBOO_FF_SETTLEMENT-<EMP#>-<NAME>-<MON-YY>.xlsx`
+Tabs README, SETUP (Act parameters, MRPS 7%+7% Maldivians, MIRA EWT slabs, notice table, QB accounts, rate 15.42),
+INPUT (yellow), CALC, F&F STATEMENT (A4), CHECKS (PASS/INFO/ALERT/PENDING/FAIL), QB JV, REGISTER.
+Leave pay base there = basic + MWA (fixed allowances flagged "Leave / notice base"); salary paid for the full calendar
+month in payroll, so F&F pays only days after the paid month. 4025 Hussain Samin: joined 28-Dec-25, resigned, LWD 30-Sep-26,
+22.5 days AL = MVR 9,000; Sep SVC/tips pending; due 07-Oct-26. Tracker F&F tab agrees (MVR 9,000).
 
 ## Environment notes
 - Recalculate with the xlsx skill's `scripts/recalc.py`. If LibreOffice hangs even on a tiny file, `libreoffice-calc` is missing:
@@ -44,10 +52,16 @@ F&F SETTLEMENT tab (added 05-Oct-26):
 ## Work log
 - 04-Oct-26: Sep-26 tracker built – controls, compliance review, Keplar findings, ATT DATA Jan-25…Sep-26 (Sep-25 missing),
   1012 opening balance and R&R, proposed Oct-26 NP adjustments (net USD -505 / MVR +329).
-- 05-Oct-26: F&F SETTLEMENT tab added (draft); LEAVE APPLICATION CHECK notice check fixed for blank dates.
+- 05-Oct-26: F&F SETTLEMENT tab added (draft v3); LEAVE APPLICATION CHECK notice check fixed for blank dates.
+  Leavers entered: 4025 (LWD 30-Sep-26, base MVR 12,000) and 1013 Manasa Kaveti (LWD 06-Oct-26, due 13-Oct-26).
+  4025 joining date 28-Dec-25 added to STAFF MASTER. Reviewed the 4025 F&F model file.
 
 ## Open items
 - User to review the F&F draft (off-day rule, PH in lieu, SVC note wording).
+- Decide the leave-pay / no-pay daily base for staff with MWA: basic only (tracker) or basic + MWA (F&F model, Sep payroll NP).
+- 1013 F&F: needs separation type, Oct attendance 21-Sep to 06-Oct, salary components, nationality, bank, clearance.
+- 4025: pay MVR 9,000 by 07-Oct-26; designation/department differ (tracker Tour Guide / RECREATION vs F&F
+  Public Relation and Entertainment Associate / Sales and Marketing).
 - HR: enter leavers (2051, 4025, 5016 and staff not Active) with last working days; confirm currency for 1002, 1003, 4028.
 - 38 joining dates missing; 111 AL b/f not confirmed; Sep-25 attendance summary; non-eligible 2026 AL list; CL 5 days in SETUP.
 - Next month: roll SETUP to Oct-26 and load Oct-26 attendance / payroll.
