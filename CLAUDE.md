@@ -33,7 +33,10 @@ F&F SETTLEMENT tab (added 05-Oct-26):
   Hidden column AE = as-at date (last day, else SETUP period end) so a row fills in as soon as an Emp# is typed.
 - Notes block: what is payable on exit under the Maldives Employment Act (AL, weekly off, PH, R&R, sick/EL not paid, SVC, timing).
 - Part B (all staff): pending AL + R&R + day off and value (leave liability) per currency.
-- Weekly off earned = (total days – AL – SL – EL – PL – NP) ÷ 7 from 01-Jan-26, less OFF + PDO taken.
+- Part A counts SINCE JOINING (FC instruction 05-Oct-26), using ATT DATA history from SETUP B13 = 01-Jan-25:
+  AL earned = 2.5 × COMPLETED months from MAX(joining, 01-Jan-25) to last day (DATEDIF, same as the F&F model) – all AL taken
+  since then + HR adjustment (K: + balance before Jan-25 / – AL not yet in ATT DATA). Weekly off earned = (total days – AL – SL
+  – EL – PL – NP) ÷ 7 over the same window, less all OFF + PDO taken. Part B (liability) still uses 2026 YTD balances.
 - FC DASHBOARD control 19 counts F&F REDs; COMPLIANCE REVIEW rows 17 and 23 link to this tab.
 
 ## Per-employee F&F model – `ECOBOO_FF_SETTLEMENT-<EMP#>-<NAME>-<MON-YY>.xlsx`
@@ -53,7 +56,8 @@ month in payroll, so F&F pays only days after the paid month. 4025 Hussain Samin
 - 04-Oct-26: Sep-26 tracker built – controls, compliance review, Keplar findings, ATT DATA Jan-25…Sep-26 (Sep-25 missing),
   1012 opening balance and R&R, proposed Oct-26 NP adjustments (net USD -505 / MVR +329).
 - 05-Oct-26: F&F SETTLEMENT tab added (draft v3); LEAVE APPLICATION CHECK notice check fixed for blank dates.
-  Leavers entered: 4025 (LWD 30-Sep-26, base MVR 12,000) and 1013 Manasa Kaveti (LWD 06-Oct-26, due 13-Oct-26).
+  Leavers entered: 4025 (LWD 30-Sep-26, base MVR 12,000 → 22.5 days = MVR 9,000) and 1013 Manasa Kaveti
+  (LWD 06-Oct-26, due 13-Oct-26: AL 50 earned – 31 taken = 19.0 + day off 7.6 = 26.6 days = USD 709.33 on basic 800). Draft v4.
   4025 joining date 28-Dec-25 added to STAFF MASTER. Reviewed the 4025 F&F model file.
 
 ## Open items
