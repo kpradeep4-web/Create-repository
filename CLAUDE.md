@@ -25,32 +25,23 @@ Business rules:
 - 1012: joined 04-Oct-24; designation Financial Controller from 01-Oct-26; no leave of any kind taken since joining;
   R&R 7 days per 6-month period, only the R&R cash allowance (USD 600) was paid.
 
-F&F SETTLEMENT tab (added 05-Oct-26):
-- Part A (leavers, rows 8–27): HR enters Emp#, separation type, last working day, AL not yet in ATT DATA, off-day adjustment,
-  PH days in lieu, other days, F&F paid date. Pays AL balance + R&R + pending weekly off/PDO + PH in lieu + other, × basic ÷ 30.
-  Due date = last day + 7 (Employment Act). Negative AL = recover. Column AC = SVC note (previous month full + leaving month
-  pro-rata, amounts from the SVC sheet). Column AD = monthly leave-pay base if not basic (e.g. basic + MWA); blank = basic.
-  Hidden column AE = as-at date (last day, else SETUP period end) so a row fills in as soon as an Emp# is typed.
-- Notes block: what is payable on exit under the Maldives Employment Act (AL, weekly off, PH, R&R, sick/EL not paid, SVC, timing).
-- Part B (all staff): pending AL + R&R + day off and value (leave liability) per currency.
-- Part A counts SINCE JOINING (FC instruction 05-Oct-26), using ATT DATA history from SETUP B13 = 01-Jan-25:
-  AL earned = 2.5 × COMPLETED months from MAX(joining, 01-Jan-25) to last day (DATEDIF, same as the F&F model) – all AL taken
-  since then + HR adjustment (K: + balance before Jan-25 / – AL not yet in ATT DATA). Weekly off earned = (total days – AL – SL
-  – EL – PL – NP) ÷ 7 over the same window, less all OFF + PDO taken. Part B (liability) still uses 2026 YTD balances.
-- FC DASHBOARD control 19 counts F&F REDs; COMPLIANCE REVIEW rows 17 and 23 link to this tab.
-
-LEAVE STATEMENT tab (05-Oct-26): one employee (D6 Emp#, D7 last day). Month-by-month since joining (or from 01-Jan-26 when
-HR opening balance exists): attendance, AL earned (completed months)/taken/running balance, off earned (1 in 7)/OFF+PDO taken/
-running balance, PH worked with Yes/No "paid in payroll" per month → PH pending. Summary: opening balance 31-Dec-25 (OPENING BAL
-D = AL, new U = day off, new V = PH), earned, taken, F&F adjustments, pending days and value; agreement check with F&F part A;
-service-charge block (SVC and tips: previous month full + last-day month pro-rata, rows 20–23): column M = SVC amount typed manually (overrides per-head × days), N = already paid Yes/No, O = due in F&F. Draft v7.
-Rule from FC: if an HR opening balance is entered, F&F = opening balance + 2026 earned – 2026 taken; else count since joining.
-
-F&F STATEMENT tab (05-Oct-26): printable A4 statement in the same layout as the per-employee F&F model, driven by
-LEAVE STATEMENT D6/D7. Earnings: final-period salary (last day – "salary paid up to" – no-pay after cut-off) on basic +
-fixed allowances, PH not paid, AL, day off/PDO, R&R/other, notice in lieu, SVC, tips, arrears; deductions: MRPS 7% (Maldivian,
-on basic), EWT and recoveries (typed); bank, clearance, signatories. Inputs in yellow panel I:L (not printed); helper N51 =
-salary days. Tested: 4025 → MVR 9,000 (matches F&F file); 1013 → USD 868.57 before SVC/tips. Draft v8.
+F&F SETTLEMENT tab – ONE simple page (v9, 05-Oct-26; FC said three tabs were too complex – F&F SETTLEMENT / LEAVE
+STATEMENT / F&F STATEMENT were replaced by this single tab). One employee at a time, A4 portrait, print area A1:H59:
+- A (rows 7–14) yellow inputs C7 Emp#, C8 last working day, C9 separation type, C10 nationality, C11 salary paid up to
+  (default EOMONTH(SETUP B7)), C12 no-pay days after cut-off, C13 fixed allowances, C14 leave-pay base (blank = basic);
+  right side auto: name, dept/designation, joining, service, basic/ccy, daily rate, basis, payable by (last day + 7).
+- B (rows 18–22) pending leave since joining: opening 31-Dec-25 (OPENING BAL D/U/V, used only when D is filled → then
+  counts from 01-Jan-26), earned, taken, HR adjustment (yellow), pending days, amount. AL = 2.5 × completed months
+  (DATEDIF); day off = (total – AL – SL – EL – PL – NP) ÷ 7 less OFF + PDO; PH worked vs "paid" (yellow, defaults to all
+  worked = paid at 1.5× in payroll); R&R from OPENING BAL G/H/I/L.
+- C (rows 27–30) SVC and tips: previous month full + leaving month to last day, amounts typed in G (USD).
+- D (rows 36–51) final settlement: salary days (hidden helper O18 = last day – paid up to – no-pay), allowances, leave
+  items, SVC, tips, other earnings (typed); MRPS 7% (Maldivian), EWT and recoveries typed as negatives; NET.
+- F (row 62+) month-by-month working (AL earned / balance, off earned / balance). Hidden helpers in column O (labels P).
+- Tested: 1013 → AL 19.0 + day off 7.57 = 26.57 days USD 708.57 + 6 days salary 160 = USD 868.57 (SVC/tips pending);
+  4025 → MVR 9,000 (matches F&F model). FC DASHBOARD has no F&F control (row 25 not used).
+- Deliver the LibreOffice-recalculated file (values visible in any viewer); preview a page by converting a values-only
+  copy of the tab to PDF and pdftoppm.
 
 ## Per-employee F&F model – `ECOBOO_FF_SETTLEMENT-<EMP#>-<NAME>-<MON-YY>.xlsx`
 Tabs README, SETUP (Act parameters, MRPS 7%+7% Maldivians, MIRA EWT slabs, notice table, QB accounts, rate 15.42),
@@ -68,14 +59,14 @@ month in payroll, so F&F pays only days after the paid month. 4025 Hussain Samin
 ## Work log
 - 04-Oct-26: Sep-26 tracker built – controls, compliance review, Keplar findings, ATT DATA Jan-25…Sep-26 (Sep-25 missing),
   1012 opening balance and R&R, proposed Oct-26 NP adjustments (net USD -505 / MVR +329).
-- 05-Oct-26: F&F SETTLEMENT tab added (draft v3); LEAVE APPLICATION CHECK notice check fixed for blank dates.
+- 05-Oct-26: F&F work – final version v9 = single simple F&F SETTLEMENT tab (earlier drafts v1–v8 superseded); LEAVE APPLICATION CHECK notice check fixed for blank dates.
   Leavers entered: 4025 (LWD 30-Sep-26, base MVR 12,000 → 22.5 days = MVR 9,000) and 1013 Manasa Kaveti
   (LWD 06-Oct-26, due 13-Oct-26: AL 50 earned – 31 taken = 19.0 + day off 7.57 = 26.57 days = USD 708.57 on basic 800). Draft v5.
   5 PH-worked months for 1013 need Yes/No; Sep-25 and Oct-26 attendance missing; Jan–Apr 2025 show no off days.
   4025 joining date 28-Dec-25 added to STAFF MASTER. Reviewed the 4025 F&F model file.
 
 ## Open items
-- User to review the F&F draft (off-day rule, PH in lieu, SVC note wording).
+- User to review F&F v9 (single tab).
 - Decide the leave-pay / no-pay daily base for staff with MWA: basic only (tracker) or basic + MWA (F&F model, Sep payroll NP).
 - 1013 F&F: needs separation type, Oct attendance 21-Sep to 06-Oct, salary components, nationality, bank, clearance.
 - 4025: pay MVR 9,000 by 07-Oct-26; designation/department differ (tracker Tour Guide / RECREATION vs F&F
