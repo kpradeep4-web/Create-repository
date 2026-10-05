@@ -50,6 +50,14 @@ Leave pay base there = basic + MWA (fixed allowances flagged "Leave / notice bas
 month in payroll, so F&F pays only days after the paid month. 4025 Hussain Samin: joined 28-Dec-25, resigned, LWD 30-Sep-26,
 22.5 days AL = MVR 9,000; Sep SVC/tips pending; due 07-Oct-26. Tracker F&F tab agrees (MVR 9,000).
 
+1013 Kaveti Manasa F&F file (FC's copy of the 4025 model, corrected 05-Oct-26): LWD 05-Oct-26 in the file (FC said 06-Oct
+earlier – to confirm), 5 salary days USD 133.33, AL POLICY 50 − 31 taken = 19.0 days USD 506.67, SVC Sep 150 + Oct 50,
+tips Sep 10 + Oct 10 (moved from hard-coded statement cells into INPUT rows 51–52), pending day off 7.57 days USD 201.87
+(INPUT row 54) → NET USD 1,061.87, pay by 12-Oct-26. Indian → no MRPS. Sep-26 payroll net USD 1,100.45 via SBI USD
+(not BML). Fixed: 4025 leftovers (bank, clearance remarks, notes, double-payment figures, HR draft), JV missing Oct SVC line
+(was going to 9780 Round Off), statement tips rows, pending-count logic, CHECKS HR-draft blanks, new check 17 (preparer ≠
+leaver). Open: SBI USD account no., exit clearance, preparer, confirm SVC/tips amounts and day off, Oct attendance.
+
 ## Environment notes
 - Recalculate with the xlsx skill's `scripts/recalc.py`. If LibreOffice hangs even on a tiny file, `libreoffice-calc` is missing:
   `apt-get install -y libreoffice-calc`. Do not `pkill -f soffice` from a shell whose own command line contains "soffice".
