@@ -39,6 +39,13 @@ F&F SETTLEMENT tab (added 05-Oct-26):
   – EL – PL – NP) ÷ 7 over the same window, less all OFF + PDO taken. Part B (liability) still uses 2026 YTD balances.
 - FC DASHBOARD control 19 counts F&F REDs; COMPLIANCE REVIEW rows 17 and 23 link to this tab.
 
+LEAVE STATEMENT tab (05-Oct-26): one employee (D6 Emp#, D7 last day). Month-by-month since joining (or from 01-Jan-26 when
+HR opening balance exists): attendance, AL earned (completed months)/taken/running balance, off earned (1 in 7)/OFF+PDO taken/
+running balance, PH worked with Yes/No "paid in payroll" per month → PH pending. Summary: opening balance 31-Dec-25 (OPENING BAL
+D = AL, new U = day off, new V = PH), earned, taken, F&F adjustments, pending days and value; agreement check with F&F part A;
+service-charge block (previous month full + last-day month pro-rata; per-head SVC typed from the SVC sheet).
+Rule from FC: if an HR opening balance is entered, F&F = opening balance + 2026 earned – 2026 taken; else count since joining.
+
 ## Per-employee F&F model – `ECOBOO_FF_SETTLEMENT-<EMP#>-<NAME>-<MON-YY>.xlsx`
 Tabs README, SETUP (Act parameters, MRPS 7%+7% Maldivians, MIRA EWT slabs, notice table, QB accounts, rate 15.42),
 INPUT (yellow), CALC, F&F STATEMENT (A4), CHECKS (PASS/INFO/ALERT/PENDING/FAIL), QB JV, REGISTER.
@@ -57,7 +64,8 @@ month in payroll, so F&F pays only days after the paid month. 4025 Hussain Samin
   1012 opening balance and R&R, proposed Oct-26 NP adjustments (net USD -505 / MVR +329).
 - 05-Oct-26: F&F SETTLEMENT tab added (draft v3); LEAVE APPLICATION CHECK notice check fixed for blank dates.
   Leavers entered: 4025 (LWD 30-Sep-26, base MVR 12,000 → 22.5 days = MVR 9,000) and 1013 Manasa Kaveti
-  (LWD 06-Oct-26, due 13-Oct-26: AL 50 earned – 31 taken = 19.0 + day off 7.6 = 26.6 days = USD 709.33 on basic 800). Draft v4.
+  (LWD 06-Oct-26, due 13-Oct-26: AL 50 earned – 31 taken = 19.0 + day off 7.57 = 26.57 days = USD 708.57 on basic 800). Draft v5.
+  5 PH-worked months for 1013 need Yes/No; Sep-25 and Oct-26 attendance missing; Jan–Apr 2025 show no off days.
   4025 joining date 28-Dec-25 added to STAFF MASTER. Reviewed the 4025 F&F model file.
 
 ## Open items
