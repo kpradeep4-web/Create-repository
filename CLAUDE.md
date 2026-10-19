@@ -58,12 +58,16 @@ tips Sep 10 + Oct 10 (moved from hard-coded statement cells into INPUT rows 51�
 (was going to 9780 Round Off), statement tips rows, pending-count logic, CHECKS HR-draft blanks, new check 17 (preparer ≠
 leaver). Open: SBI USD account no., exit clearance, preparer, confirm SVC/tips amounts and day off, Oct attendance.
 
-## Ecoboo Cruise P&L – `ECOBOO CRUISE - P&L 2023 to SEP-26 - AUDIT TIE.xlsx` (19-Oct-26)
+## Ecoboo Cruise P&L + Balance Sheet – `ECOBOO CRUISE - P&L and BALANCE SHEET 2023 to SEP-26 - AUDIT TIE.xlsx` (19-Oct-26)
 Built from the QB export "Ecoboo_Cruise_Profit_and_Loss_by_Month.xlsx" (Jan-23..Sep-26, accrual) by a script: tabs SUMMARY,
 AUDIT TIE, 2023, 2024, 2025, 2026 JAN-SEP (QB account rows, blue = QB amounts, subtotals = QB formulas re-pointed).
 QB net earnings: FY23 −13,165.08 (Dec-23 only, first month), FY24 −29,393.53, FY25 +938.00, Jan–Sep 26 +22,061.12;
 revenue 26 = 163,806.09 = monthly tie file every month. Equity check vs BS Detail 30-Sep-26: RE b/f −41,620.61 and
 net income 22,061.12 agree. No depreciation ever booked on PP&E 21,259.15 – likely audit difference.
+BALANCE SHEET tab at 31-Dec-23/24/25 and 30-Sep-26 = SUMIFS over BS DATA (QB "Balance Sheet Detail" export, 6,660 lines);
+equity = prior years' P&L + RE correction JVs (net 0; 0.02 at Dec-23) + period P&L. Totals: assets 5,240.74 / 26,988.71 /
+9,850.61 / 2,811.46; liabilities 18,405.80 / 69,547.32 / 51,471.22 / 22,370.95 – balances every date. AUDIT TIE has
+total assets / liabilities / equity lines per year too. Advance Deposit Ledger −7,220 should be presented as a liability.
 Audited FS figures NOT yet received – yellow cells on AUDIT TIE. Cruise QB: user "accounts@ecoboomaldives.com" is not
 admin, so the connector cannot link Cruise/Safira until the primary admin makes it Company admin; use exports meanwhile.
 Monthly tie file: SUMMARY C25 formula broken (=…C204-C203) – should be =IF(OR(C23="",C24=""),"",C24-C23).
