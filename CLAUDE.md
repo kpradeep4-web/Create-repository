@@ -58,6 +58,16 @@ tips Sep 10 + Oct 10 (moved from hard-coded statement cells into INPUT rows 51�
 (was going to 9780 Round Off), statement tips rows, pending-count logic, CHECKS HR-draft blanks, new check 17 (preparer ≠
 leaver). Open: SBI USD account no., exit clearance, preparer, confirm SVC/tips amounts and day off, Oct attendance.
 
+## Ecoboo Cruise P&L – `ECOBOO CRUISE - P&L 2023 to SEP-26 - AUDIT TIE.xlsx` (19-Oct-26)
+Built from the QB export "Ecoboo_Cruise_Profit_and_Loss_by_Month.xlsx" (Jan-23..Sep-26, accrual) by a script: tabs SUMMARY,
+AUDIT TIE, 2023, 2024, 2025, 2026 JAN-SEP (QB account rows, blue = QB amounts, subtotals = QB formulas re-pointed).
+QB net earnings: FY23 −13,165.08 (Dec-23 only, first month), FY24 −29,393.53, FY25 +938.00, Jan–Sep 26 +22,061.12;
+revenue 26 = 163,806.09 = monthly tie file every month. Equity check vs BS Detail 30-Sep-26: RE b/f −41,620.61 and
+net income 22,061.12 agree. No depreciation ever booked on PP&E 21,259.15 – likely audit difference.
+Audited FS figures NOT yet received – yellow cells on AUDIT TIE. Cruise QB: user "accounts@ecoboomaldives.com" is not
+admin, so the connector cannot link Cruise/Safira until the primary admin makes it Company admin; use exports meanwhile.
+Monthly tie file: SUMMARY C25 formula broken (=…C204-C203) – should be =IF(OR(C23="",C24=""),"",C24-C23).
+
 ## Environment notes
 - Recalculate with the xlsx skill's `scripts/recalc.py`. If LibreOffice hangs even on a tiny file, `libreoffice-calc` is missing:
   `apt-get install -y libreoffice-calc`. Do not `pkill -f soffice` from a shell whose own command line contains "soffice".
@@ -79,7 +89,10 @@ leaver). Open: SBI USD account no., exit clearance, preparer, confirm SVC/tips a
   Built in simple.py (reads sep25.xlsx). Tracker v10. Side effect: day-off earned rises for Sep-25 (no OFF recorded) – 1013 day
   off 7.57 → 11.86 in the tracker tab; FC decision pending on how to treat months without off-day detail.
 
+- 19-Oct-26: Ecoboo Cruise P&L by year + audit tie built (see section above).
+
 ## Open items
+- Cruise: get audited FS 2023–2025 (and Safira) to fill AUDIT TIE; confirm depreciation treatment.
 - User to review F&F v9 (single tab).
 - Decide the leave-pay / no-pay daily base for staff with MWA: basic only (tracker) or basic + MWA (F&F model, Sep payroll NP).
 - 1013 F&F: needs separation type, Oct attendance 21-Sep to 06-Oct, salary components, nationality, bank, clearance.
