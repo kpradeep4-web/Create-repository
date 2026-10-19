@@ -73,7 +73,10 @@ Audited FS found in Gmail (FCLLP / Faris & Co): "HalfSix Investment FS24-Final.p
 AFS entity = Sithhath Abdulla (Halfsix Investment) = Ecoboo Cruise + Safira. FY23 agrees on every line (Cruise only).
 AFS: FY24 rev 368,515 / NP −97,419 / TA 71,107 / TL 181,691; FY25 rev 373,826 / NP −98,066 / TA 58,938 / TL 267,589;
 no PP&E or depreciation in the AFS. Cruise-only differences imply Safira NP ≈ −68,025 (FY24) and −99,004 (FY25) incl. audit adj.
-Next: get Safira QB P&L by Month + Balance Sheet Detail to complete the combined tie. Cruise QB: user "accounts@ecoboomaldives.com" is not
+User asked for a Cruise-only version (without Safira): tab CRUISE FS (AUDIT FORMAT) = Cruise P&L + SoFP in AFS line items
+(reclass only: customer advances → payables, Safira debit → due from RP, pension → government, bank charges → finance costs);
+AUDIT TIE column D = Audited − Cruise ("Safira + audit adj.", derived) with an equity-movement = profit consistency check (OK).
+Safira data would replace the derived column later. Cruise QB: user "accounts@ecoboomaldives.com" is not
 admin, so the connector cannot link Cruise/Safira until the primary admin makes it Company admin; use exports meanwhile.
 Monthly tie file: SUMMARY C25 formula broken (=…C204-C203) – should be =IF(OR(C23="",C24=""),"",C24-C23).
 
