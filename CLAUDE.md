@@ -68,7 +68,12 @@ BALANCE SHEET tab at 31-Dec-23/24/25 and 30-Sep-26 = SUMIFS over BS DATA (QB "Ba
 equity = prior years' P&L + RE correction JVs (net 0; 0.02 at Dec-23) + period P&L. Totals: assets 5,240.74 / 26,988.71 /
 9,850.61 / 2,811.46; liabilities 18,405.80 / 69,547.32 / 51,471.22 / 22,370.95 – balances every date. AUDIT TIE has
 total assets / liabilities / equity lines per year too. Advance Deposit Ledger −7,220 should be presented as a liability.
-Audited FS figures NOT yet received – yellow cells on AUDIT TIE. Cruise QB: user "accounts@ecoboomaldives.com" is not
+Audited FS found in Gmail (FCLLP / Faris & Co): "HalfSix Investment FS24-Final.pdf" (01-Sep-25, FY24 + FY23 comparatives) and
+"HalfSix Investment AFS25 - Draft.pdf" (21-Jul-26, signed by Sithhath). Gmail attachments are read via get_message RAW + MIME decode.
+AFS entity = Sithhath Abdulla (Halfsix Investment) = Ecoboo Cruise + Safira. FY23 agrees on every line (Cruise only).
+AFS: FY24 rev 368,515 / NP −97,419 / TA 71,107 / TL 181,691; FY25 rev 373,826 / NP −98,066 / TA 58,938 / TL 267,589;
+no PP&E or depreciation in the AFS. Cruise-only differences imply Safira NP ≈ −68,025 (FY24) and −99,004 (FY25) incl. audit adj.
+Next: get Safira QB P&L by Month + Balance Sheet Detail to complete the combined tie. Cruise QB: user "accounts@ecoboomaldives.com" is not
 admin, so the connector cannot link Cruise/Safira until the primary admin makes it Company admin; use exports meanwhile.
 Monthly tie file: SUMMARY C25 formula broken (=…C204-C203) – should be =IF(OR(C23="",C24=""),"",C24-C23).
 
@@ -96,7 +101,7 @@ Monthly tie file: SUMMARY C25 formula broken (=…C204-C203) – should be =IF(O
 - 19-Oct-26: Ecoboo Cruise P&L by year + audit tie built (see section above).
 
 ## Open items
-- Cruise: get audited FS 2023–2025 (and Safira) to fill AUDIT TIE; confirm depreciation treatment.
+- Cruise/Safira: export Safira QB P&L by Month + BS Detail (Jan-24..Sep-26) to tie Halfsix FY24/FY25; ask FCLLP about PP&E 20,636.58 not in AFS.
 - User to review F&F v9 (single tab).
 - Decide the leave-pay / no-pay daily base for staff with MWA: basic only (tracker) or basic + MWA (F&F model, Sep payroll NP).
 - 1013 F&F: needs separation type, Oct attendance 21-Sep to 06-Oct, salary components, nationality, bank, clearance.
