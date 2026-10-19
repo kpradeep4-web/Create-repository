@@ -76,7 +76,14 @@ no PP&E or depreciation in the AFS. Cruise-only differences imply Safira NP ≈ 
 User asked for a Cruise-only version (without Safira): tab CRUISE FS (AUDIT FORMAT) = Cruise P&L + SoFP in AFS line items
 (reclass only: customer advances → payables, Safira debit → due from RP, pension → government, bank charges → finance costs);
 AUDIT TIE column D = Audited − Cruise ("Safira + audit adj.", derived) with an equity-movement = profit consistency check (OK).
-Safira data would replace the derived column later. Cruise QB: user "accounts@ecoboomaldives.com" is not
+Safira data would replace the derived column later.
+Workbook renamed `ECOBOO CRUISE - P&L, BALANCE SHEET, SALES ANALYSIS 2026 - AUDIT TIE.xlsx`. 2026 sales (user: 2026 only):
+eZee iPOS exports uploaded (Menu Item Sales Detail – 4,904 lines, GT 164,645.43; Summary with category/sub-category; Cost
+Summary – no recipe costs, only Tour Guest 15/pax; Top / Least selling). Tabs EZEE ITEM DATA, ITEM SALES 2026 (SUMIFS by item
+× month), SALES ANALYSIS 2026 (eZee by category vs QB monthly). eZee Tours cat = Tour Hotel (QB Full Day Tour – ties 0.01/month)
++ Tour Guest, Entry fee, Wi-Fi (in QB POS). Tips 118 not revenue. Tie QB − eZee: Jan −5.69, Feb 0.35, Mar −625.73 (QB POS 9,769.00
+round figure; no single eZee day matches – compare QB March revenue JV), Apr −85.09 (= −90 snorkel adj + 4.9), May–Sep < 15.
+Food cost 22,713 vs eZee food 4,148 – food feeds tour guests. iPOS cannot be accessed from cloud sessions – user exports. Cruise QB: user "accounts@ecoboomaldives.com" is not
 admin, so the connector cannot link Cruise/Safira until the primary admin makes it Company admin; use exports meanwhile.
 Monthly tie file: SUMMARY C25 formula broken (=…C204-C203) – should be =IF(OR(C23="",C24=""),"",C24-C23).
 
