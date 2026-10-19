@@ -90,7 +90,15 @@ SO-0072870(=INV-0063112 Jan 3,819.75), INV-0064439 (dated 03-Mar, booked Feb 4,5
 INV-0069363 3,824.30, INV-0069353 FOC; IBL 8920008122 1,054.82, 8614 350.80, 8618 748.37, 8619 74.50 = 17,406.92 (QB input list
 17,406.77). QB bev cost 23,018.75 → 5,612 local soft drinks etc. Tabs: SUMMARY, MONTHLY MOVEMENT (in/out/balance per product per
 month), STOCK VARIANCE (yellow opening + physical count), PURCHASES 2026, RECIPES & SALES (yellow standard recipes). Theoretical
-liquor cost 13,955 = 17.6% of sales 79,273; expected stock 30-Sep 3,452 (opening unknown). "Estrela Dam" 207 sold = Estrella shortfall. Cruise QB: user "accounts@ecoboomaldives.com" is not
+liquor cost 13,955 = 17.6% of sales 79,273; expected stock 30-Sep 3,452 (opening unknown). "Estrela Dam" 207 sold = Estrella shortfall.
+Hotel → Cruise transfers (eZee outlet "CRUISE SHIP"): scratchpad transfers/cruise_transfers.json (1,837 lines Jan–Aug, USD 27,106.91;
+food 21,376.80, bev 4,175.16) + cruise_jv_totals.json ("05.USD JV FORMAT_CRUISE BAR" CSVs Feb–Aug). Sep file / JV not received;
+Aug master xlsx in the archive is truncated (used F&B copy). Added to bar stock workbook: HOTEL TRANSFERS 2026, TRANSFER & QB TIE,
+TRANSFERS BY ITEM, SOFT DRINKS. QB = transfers in Apr–Aug; Feb transfers booked in Mar; Jan does not tie (QB food 3,086.92 / bev
+5,513.80); Jul fuel 38.94 in food. Soft drinks 4,034 cans received vs 493 sold alone: tonic ≈ G&T, soda ≈ mojito/spritz; Coke Zero 360,
+Red Bull 143, Fanta 439 unexplained.
+Daily sales workbook: `ECOBOO CRUISE - DAILY SALES ANALYSIS JAN-SEP 2026.xlsx` (build_daily.py): MONTHLY SUMMARY, WEEKDAY ANALYSIS,
+CALENDAR VIEW, DAILY SALES, EZEE DATA. Gmail drafts to Hugo & Fernando created (not sent) – user attaches files (connector cannot attach >~50 KB). Cruise QB: user "accounts@ecoboomaldives.com" is not
 admin, so the connector cannot link Cruise/Safira until the primary admin makes it Company admin; use exports meanwhile.
 Monthly tie file: SUMMARY C25 formula broken (=…C204-C203) – should be =IF(OR(C23="",C24=""),"",C24-C23).
 
@@ -118,6 +126,7 @@ Monthly tie file: SUMMARY C25 formula broken (=…C204-C203) – should be =IF(O
 - 19-Oct-26: Ecoboo Cruise P&L by year + audit tie built (see section above).
 
 ## Open items
+- Cruise: user to export Cruise QB Transaction Detail by Account / Purchases by Vendor Detail Jan–Sep 26 to check every bill item-wise; Accounts to send Sep-26 Cruise transfer file + JV and Jan-26 Cruise JV.
 - Cruise/Safira: export Safira QB P&L by Month + BS Detail (Jan-24..Sep-26) to tie Halfsix FY24/FY25; ask FCLLP about PP&E 20,636.58 not in AFS.
 - User to review F&F v9 (single tab).
 - Decide the leave-pay / no-pay daily base for staff with MWA: basic only (tracker) or basic + MWA (F&F model, Sep payroll NP).
