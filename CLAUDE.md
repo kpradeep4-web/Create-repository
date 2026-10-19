@@ -83,7 +83,14 @@ Summary – no recipe costs, only Tour Guest 15/pax; Top / Least selling). Tabs 
 × month), SALES ANALYSIS 2026 (eZee by category vs QB monthly). eZee Tours cat = Tour Hotel (QB Full Day Tour – ties 0.01/month)
 + Tour Guest, Entry fee, Wi-Fi (in QB POS). Tips 118 not revenue. Tie QB − eZee: Jan −5.69, Feb 0.35, Mar −625.73 (QB POS 9,769.00
 round figure; no single eZee day matches – compare QB March revenue JV), Apr −85.09 (= −90 snorkel adj + 4.9), May–Sep < 15.
-Food cost 22,713 vs eZee food 4,148 – food feeds tour guests. iPOS cannot be accessed from cloud sessions – user exports. Cruise QB: user "accounts@ecoboomaldives.com" is not
+Food cost 22,713 vs eZee food 4,148 – food feeds tour guests. iPOS cannot be accessed from cloud sessions – user exports.
+Bar stock: `ECOBOO CRUISE - BAR STOCK RECONCILIATION JAN-SEP 2026.xlsx` (separate workbook, builder build_stock.py). eZee Cruise
+inventory unused (Stock Ledger = openings only, Closing Stock 30-Sep all 0). Purchases from Gmail invoices (Cruise only): Grape
+SO-0072870(=INV-0063112 Jan 3,819.75), INV-0064439 (dated 03-Mar, booked Feb 4,590.25), INV-0066224 2,651.40, INV-0066229 292.50,
+INV-0069363 3,824.30, INV-0069353 FOC; IBL 8920008122 1,054.82, 8614 350.80, 8618 748.37, 8619 74.50 = 17,406.92 (QB input list
+17,406.77). QB bev cost 23,018.75 → 5,612 local soft drinks etc. Tabs: SUMMARY, MONTHLY MOVEMENT (in/out/balance per product per
+month), STOCK VARIANCE (yellow opening + physical count), PURCHASES 2026, RECIPES & SALES (yellow standard recipes). Theoretical
+liquor cost 13,955 = 17.6% of sales 79,273; expected stock 30-Sep 3,452 (opening unknown). "Estrela Dam" 207 sold = Estrella shortfall. Cruise QB: user "accounts@ecoboomaldives.com" is not
 admin, so the connector cannot link Cruise/Safira until the primary admin makes it Company admin; use exports meanwhile.
 Monthly tie file: SUMMARY C25 formula broken (=…C204-C203) – should be =IF(OR(C23="",C24=""),"",C24-C23).
 
